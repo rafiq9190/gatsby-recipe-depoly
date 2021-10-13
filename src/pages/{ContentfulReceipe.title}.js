@@ -14,6 +14,7 @@ function RecipeTemplate({data}) {
           <div className='recipe-page'>
           <section className='recipe-hero'>
             <GatsbyImage image={getToImage} alt={title} className='about-img'/>
+            
             <article className='recipe-info'>
               <h2>{title}</h2>
               <p>{description}</p>
@@ -46,7 +47,11 @@ function RecipeTemplate({data}) {
                   
                   })
                 }
+                  
               </p>
+              <div className='nav-link contact-link'>
+            <Link to='' className='btn'>Order Now</Link>
+          </div>
             </article>
           </section>
           <section className='recipe-content'>
