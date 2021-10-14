@@ -25,7 +25,10 @@ function Contact({data}) {
             </p>
           </article>
           <article>
-            <form className="form contact-form">
+            <form className="form contact-form" 
+            action='https://formspree.io/f/moqyzqjj'
+            method="POST"
+            >
               <div className="form-row">
                 <label htmlFor="Name">Your Name</label>
                 <input type='text' name="name" id="name" />

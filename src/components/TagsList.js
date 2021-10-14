@@ -1,6 +1,7 @@
 import React from 'react'
 import setUpTag from '../utilis/SetUpTag'
 import {Link}from 'gatsby'
+import slugify from 'slugify'
 
 function TagsList({recipes}) {
     const newTag=setUpTag(recipes) 
@@ -13,8 +14,9 @@ function TagsList({recipes}) {
                 {
                     newTag.map((tag,index)=>{
                         const [text,value]=tag
+                        const slug=slugify(text,{lower:true})
                         return(
-                            <Link to={`/${text}`} key={index}>{text}({value})</Link>
+                            <Link to={`/tags/${slug}`} key={index}>{text}({value})</Link>
                         )
                     })
                 }

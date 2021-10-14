@@ -1,7 +1,39 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path= require('path')
+const { default: slugify } = require('slugify')
 
-// You can delete this file if you're not using it
+
+
+
+exports.createPages= async({graphql,actions})=>{
+const {createPage}=actions
+console.log(createPage)
+
+const result=await graphql(`
+query MyQuery {
+    allContentfulReceipe {
+      nodes {
+        content {
+          tags
+        }
+      }
+    }
+  }
+  
+
+`)
+result.data.allContentfulReceipe.nodes.forEach((recipe)=>{
+    recipe.content.tags.forEach((tag)=>{
+        const tagSlug=slugify(tag,{lower:true})
+        createPage({
+            path:`/tags/${tagSlug}`,
+            component:path.resolve(`src/Template/Template.js`),
+            context:{
+                tag:tag,
+            }
+        })
+    })
+})
+
+console.log('result is ..............',result)
+
+}
