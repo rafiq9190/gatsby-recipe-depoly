@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/Layout';
 import {StaticImage} from 'gatsby-plugin-image'
 import AllRecipes from '../components/AllRecipes';
+import Seo from '../components/Seo'
 
 
 
@@ -13,7 +14,7 @@ function Index() {
 
   return (
     <Layout>
-
+      <Seo title="Home"/>
      <main className='page'>
     <header className='hero'>
       <StaticImage

@@ -3,12 +3,14 @@ import { Link,graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import{StaticImage} from 'gatsby-plugin-image'
 import AllRecipesList from '../components/AllRecipesList'
+import Seo from '../components/Seo'
 
 const About=({data})=> {
   const recipes= data.allContentfulReceipe.nodes
   
   return (
     <Layout>
+      <Seo title='About'/>
   <main className="page">
     <section className='about-page' >
       <article >

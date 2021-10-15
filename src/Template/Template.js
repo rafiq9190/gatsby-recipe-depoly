@@ -2,6 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import AllRecipesList from '../components/AllRecipesList'
 import Layout  from '../components/Layout'
+import Seo from '../components/Seo'
 
 function Template({data,pageContext}) {
     console.log(data)
@@ -9,6 +10,7 @@ function Template({data,pageContext}) {
 
     return (
         <Layout>
+          <Seo title={pageContext.tag}/>
                 <main className='page'>
                     <h2>{pageContext.tag}</h2>
                     <div className='tag-recipes'>

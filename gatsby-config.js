@@ -7,14 +7,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `simply Recipes`,
-    description: `Nice and clean  recipes site`,
+    description: `Nice and clean  recipes site . Here you will get nice and healthy Recipes`,
     author: `@Muhammad Rafiq`,
-    person:{name:'Muhammad Rafiq', age:32},
-    simpleData:['item 1','item 2'],
-    complexData:[
-      {name:'Muhammd Rafiq',age:32},
-      {name:'Muhammd Rafiq',age:32},
-    ],
+    
 
   },
   plugins: [
